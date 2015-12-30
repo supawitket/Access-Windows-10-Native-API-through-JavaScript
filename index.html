@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Life is a journey</title>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+        <script>
+            $(function () {
+                $("button#contact").click(function () {
+                    if (typeof Windows != 'undefined') {
+                        //run in Windows 10 apps
+
+                        //create picker
+                        var picker = new Windows.ApplicationModel.Contacts.ContactPicker();
+                        picker.desiredFieldsWithContactFieldType.append(Windows.ApplicationModel.Contacts.ContactFieldType.email);
+                        //open the picker for users
+                        picker.pickContactAsync().done(function (contact) {
+                            if (contact != null) {
+                                //contact was selected
+                                var output = "Selected contact: " + contact.displayName;
+                                $("#msg").text(output);
+                            } else {
+                                //no contact was selected
+                                $("#msg").text("no contact was selected");
+                            }
+                        });
+                    }
+                });
+
+                $("button#camera").click(function () {
+                    if (typeof Windows != 'undefined') {
+                        //run in Windows 10 apps
+
+                        var captureUI = new Windows.Media.Capture.CameraCaptureUI();
+                        //set format of the picture
+                        captureUI.photoSettings.format = Windows.Media.Capture.CameraCaptureUIPhotoFormat.png;
+                        //pop up camera UI
+                        captureUI.captureFileAsync(Windows.Media.Capture.CameraCaptureUIMode.photo).then(function (capturedItem) {
+                            //Do something with the picture
+                            //here 
+                            //here is the code
+                        });
+                    }
+                });
+            });
+        </script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1><a href="index.html">Bright</a></h1>
+				<h2>Made a home out of everywhere I have been</h2>
+			</div>
+            <div id="msg" align="center"></div>
+            <div align="center">
+                <button id="contact">Select Contact</button>  
+                <button id="camera">Open Camera</button>   
+            </div>
+			<div class="gallery">
+				<div style="background-image:url(img/pic-1.jpeg);"></div>
+				<div style="background-image:url(img/pic-2.jpeg);"></div>
+				<div style="background-image:url(img/pic-3.jpeg);"></div>
+				<div style="background-image:url(img/pic-4.jpeg);"></div>
+				<div style="background-image:url(img/pic-5.jpeg);"></div>
+				<div style="background-image:url(img/pic-6.jpeg);"></div>
+				<div style="background-image:url(img/pic-7.jpeg);"></div>
+				<div style="background-image:url(img/pic-8.jpeg);"></div>
+				<div style="background-image:url(img/pic-9.jpeg);"></div>
+				<div style="background-image:url(img/pic-10.jpeg);"></div>
+				<div style="background-image:url(img/pic-11.jpeg);"></div>
+				<div style="background-image:url(img/pic-12.jpeg);"></div>
+			</div>
+		</div>
+	</body>
+</html>

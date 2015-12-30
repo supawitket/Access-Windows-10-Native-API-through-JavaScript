@@ -1,0 +1,133 @@
+
+@keyframes fade_in_gallery {
+    0%, 50% {
+    	opacity:0;
+		background-size:170% auto;
+    }
+    100% {
+    	opacity: 1;
+		background-size:150% auto;
+    }
+}
+
+body {
+	background:rgb(20,20,20);
+	padding:0px;
+	margin:0px;
+	color:rgb(200,200,200);
+	font-family: Segoe UI, Helvatika;
+}
+.container .header {
+	padding:50px 0px 50px 0px;
+}
+.container .header h1 {
+	margin:0px;
+	display: block;
+	text-align: center;
+	font-weight: 100;
+	font-size:70px;
+	color:white;
+}
+.container .header h1 a {
+	color:white;
+	text-decoration: none;
+}
+.container .header h2 {
+	display: block;
+	text-align: center;
+	margin: 0px;
+	font-weight: 100;
+}
+.container .gallery {
+	padding:0px;
+	display: table;
+	width:100%;
+	margin-top:20px;
+}
+
+.container .gallery > div {
+	width:calc(25%);
+	height:250px;
+	background-color: #000;
+	background-position: center center;
+	background-size:150% auto;
+	display: block;
+	float: left;
+	transition:0.2s;
+}
+@media (max-width: 1025px) {
+  .container .gallery > div {
+	width:calc(50%)!important;
+	height:350px!important;
+  }
+}
+@media (max-width: 700px) {
+  .container .gallery > div {
+	width:calc(100%)!important;
+	height:400px!important;
+  }
+}
+
+.container .gallery > div:nth-child(1) {
+	animation:fade_in_gallery 0.5s;
+}
+.container .gallery > div:nth-child(2) {
+	animation:fade_in_gallery 0.7s;
+}
+.container .gallery > div:nth-child(3) {
+	animation:fade_in_gallery 0.9s;
+}
+.container .gallery > div:nth-child(4) {
+	animation:fade_in_gallery 1.1s;
+}
+.container .gallery > div:nth-child(5) {
+	animation:fade_in_gallery 1.3s;
+}
+.container .gallery > div:nth-child(6) {
+	animation:fade_in_gallery 1.5s;
+}
+.container .gallery > div:nth-child(7) {
+	animation:fade_in_gallery 1.7s;
+}
+.container .gallery > div:nth-child(8) {
+	animation:fade_in_gallery 1.9s;
+}
+.container .gallery > div:nth-child(9) {
+	animation:fade_in_gallery 2.1s;
+}
+.container .gallery > div:nth-child(10) {
+	animation:fade_in_gallery 2.3s;
+}
+.container .gallery > div:nth-child(11) {
+	animation:fade_in_gallery 2.5s;
+}
+.container .gallery > div:nth-child(12) {
+	animation:fade_in_gallery 2.7s;
+}
+
+.container .gallery > div:hover {
+	background-size:170% auto;
+}
+button {
+	padding:10px 15px;
+	background:transparent;
+	border:solid 3px rgba(255,255,255,1);
+	color:rgba(255,255,255,1);
+	font-size:20px;
+}
+button:active {
+	outline: none;
+	transform:scale(0.9,0.9);
+}
+button:focus {
+	outline: none;
+}
+.msg {
+	padding:10px;
+	text-align: center;
+	color: darkgoldenrod;
+}
+
+
+
+
